@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>README.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///Users/miryalasathvika/SimpleRA/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///Users/miryalasathvika/SimpleRA/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="simplera-a-disk-based-relational-algebra-query-processor">SimpleRA: A Disk-Based Relational Algebra Query Processor</h1>
+<p><a href="https://isocpp.org/"><img src="https://img.shields.io/badge/Language-C%2B%2B-blue.svg" alt="Language"></a><br>
+<a href="https://www.gnu.org/software/make/"><img src="https://img.shields.io/badge/Build-Makefile-brightgreen.svg" alt="Build"></a><br>
+<a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a></p>
+<p><strong>SimpleRA</strong> is a custom-built, disk-based relational database management system (RDBMS) developed from the ground up in C++.</p>
+<p>The system's architecture includes abuffer manager, a block-based storage engine, and a multi-level secondary index to ensure high performance for data retrieval and modification. In addition to standard relational tables, SimpleRA has been extended to natively support matrix data structures and their associated algebraic operations.</p>
+<h2 id="core-features">Core Features</h2>
+<ul>
+<li>
+<p><strong>Relational Algebra Query Engine</strong>: Implements a wide range of relational algebra operators for complex data analysis, including:</p>
+<ul>
+<li><strong>Query Operations</strong>: <code>SELECT</code>, <code>PROJECT</code>, <code>JOIN</code>, <code>CROSS</code>, <code>DISTINCT</code>.</li>
+<li><strong>Sorting &amp; Aggregation</strong>: <code>SORT</code>, <code>ORDER BY</code>, <code>GROUP BY</code> with aggregate functions (<code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>).</li>
+<li><strong>Data Management</strong>: <code>LOAD</code>, <code>PRINT</code>, <code>EXPORT</code>, <code>CLEAR</code>, <code>RENAME</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Matrix Operations</strong>: A unique extension that treats matrices as first-class citizens, with specialized commands for linear algebra tasks:</p>
+<ul>
+<li><code>LOAD MATRIX</code> / <code>PRINT MATRIX</code> / <code>EXPORT MATRIX</code></li>
+<li><code>ROTATE</code>: In-place 90-degree clockwise rotation of a matrix.</li>
+<li><code>CROSSTRANSPOSE</code>: Swaps the transposed blocks of two matrices.</li>
+<li><code>CHECKANTISYM</code>: Verifies if a matrix is anti-symmetric against another.</li>
+</ul>
+</li>
+<li>
+<p><strong>Disk-Based Storage &amp; Memory Management</strong>:</p>
+<ul>
+<li><strong>Buffer Manager</strong>: Employs a page-based buffer pool with a FIFO replacement policy to efficiently manage I/O between disk and main memory.</li>
+<li><strong>Block-Based Storage</strong>: All tables and matrices are partitioned into fixed-size blocks (pages) on disk, allowing the system to handle datasets larger than available RAM.</li>
+<li><strong>Cursor Model</strong>: Provides a robust, iterator-like cursor for traversing records within tables and blocks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Advanced Indexing for Performance</strong>:</p>
+<ul>
+<li><strong>Two-Level Secondary Index</strong>: Implements a secondary index to dramatically accelerate data lookups. This index maps attribute values to record pointers, avoiding costly full-table scans.</li>
+<li><strong>Optimized DML Operations</strong>: <code>SEARCH</code>, <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> commands are optimized to leverage the index for high-speed execution.</li>
+<li><strong>Lazy Deletion &amp; Dirty Flags</strong>: Features an efficient deletion mechanism that marks rows for removal and uses a &quot;dirty index&quot; flag to ensure indexes are only rebuilt when necessary, minimizing overhead on subsequent operations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Large-Scale Data Operations</strong>:</p>
+<ul>
+<li><strong>External Merge Sort</strong>: The <code>SORT</code> and <code>GROUP BY</code> commands use a 2-phase k-way external merge sort to handle sorting relations that do not fit in memory.</li>
+<li><strong>Partition Hash Join</strong>: Implements an efficient hash join for equijoins by partitioning relations into buckets that can be processed in memory.</li>
+</ul>
+</li>
+</ul>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>The system processes queries through a well-defined pipeline:</p>
+<ol>
+<li><strong>Command Input</strong>: The server accepts a query from the user.</li>
+<li><strong>Syntactic Parser</strong>: The query string is tokenized and validated against the defined grammar to ensure correct syntax.</li>
+<li><strong>Semantic Parser</strong>: The parsed query is checked for logical correctness (e.g., tables and columns exist, data types match). It also handles index status checks and triggers rebuilds if a &quot;dirty&quot; index is used.</li>
+<li><strong>Executor</strong>: A dedicated execution function for the specific command is called.</li>
+<li><strong>Core Components</strong>: The executor interacts with the system's core components to perform its task:
+<ul>
+<li><strong>Table/Matrix Catalogue</strong>: Manages metadata for all loaded relations.</li>
+<li><strong>Buffer Manager</strong>: Fetches data pages from disk into memory.</li>
+<li><strong>Cursor</strong>: Iterates over the records within the fetched pages.</li>
+</ul>
+</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>A C++ compiler (<code>g++</code>)</li>
+<li><code>make</code> build automation tool</li>
+<li>Python 3 (for generating test data)</li>
+</ul>
+<h3 id="compilation">Compilation</h3>
+<ol>
+<li>
+<p>Navigate to the source directory:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> src
+</div></code></pre>
+</li>
+<li>
+<p>Clean previous builds and compile the project:</p>
+<pre class="hljs"><code><div>make clean
+make
+</div></code></pre>
+<p>This will create a <code>server</code> executable in the <code>src</code> directory.</p>
+</li>
+</ol>
+<h3 id="generating-test-data">Generating Test Data</h3>
+<p>A Python script is provided to generate a sample integer dataset.</p>
+<ol>
+<li>From the root directory, run the <code>tester.py</code> script:<pre class="hljs"><code><div>python3 tester.py
+</div></code></pre>
+</li>
+<li>This will create a file named <code>integer_dataset.csv</code> inside the <code>data/</code> directory.</li>
+</ol>
+<h3 id="running-the-server">Running the Server</h3>
+<ol>
+<li>From the <code>src</code> directory, run the server executable:<pre class="hljs"><code><div>./server
+</div></code></pre>
+</li>
+<li>The server will start, and you can begin typing queries at the <code>&gt;</code> prompt.</li>
+</ol>
+<h3 id="example-usage">Example Usage</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Load a table from a CSV file</span>
+&gt; <span class="hljs-keyword">LOAD</span> integer_dataset
+
+<span class="hljs-comment">-- Print the first 20 rows of the table</span>
+&gt; PRINT integer_dataset
+
+<span class="hljs-comment">-- Create a secondary index on 'col_1'</span>
+&gt; <span class="hljs-keyword">INDEX</span> <span class="hljs-keyword">ON</span> col_1 <span class="hljs-keyword">FROM</span> integer_dataset <span class="hljs-keyword">USING</span> BTREE
+
+<span class="hljs-comment">-- Create a new table with values from col_1 greater than 500</span>
+&gt; high_vals &lt;- <span class="hljs-keyword">SEARCH</span> <span class="hljs-keyword">FROM</span> integer_dataset <span class="hljs-keyword">WHERE</span> col_1 &gt; <span class="hljs-number">500</span>
+
+<span class="hljs-comment">-- Print the new table</span>
+&gt; PRINT high_vals
+
+<span class="hljs-comment">-- Run a script of commands from a file</span>
+&gt; <span class="hljs-keyword">SOURCE</span> my_queries
+
+<span class="hljs-comment">-- Exit the application</span>
+&gt; QUIT
+</div></code></pre>
+<h2 id="supported-commands">Supported Commands</h2>
+<p>A summary of supported commands. For full grammar, see <code>Grammar.md</code>.</p>
+<h4 id="table--data-management">Table &amp; Data Management</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOAD &lt;relation_name&gt;</code></td>
+<td>Loads a <code>.csv</code> file from the <code>data/</code> directory.</td>
+</tr>
+<tr>
+<td><code>PRINT &lt;relation_name&gt;</code></td>
+<td>Prints the first 20 rows of a table.</td>
+</tr>
+<tr>
+<td><code>EXPORT &lt;relation_name&gt;</code></td>
+<td>Saves a table to a permanent <code>.csv</code> file.</td>
+</tr>
+<tr>
+<td><code>CLEAR &lt;relation_name&gt;</code></td>
+<td>Removes a table from the system.</td>
+</tr>
+<tr>
+<td><code>LIST TABLES</code></td>
+<td>Lists all loaded tables.</td>
+</tr>
+<tr>
+<td><code>RENAME &lt;old_col&gt; TO &lt;new_col&gt; FROM &lt;relation_name&gt;</code></td>
+<td>Renames a column in a table.</td>
+</tr>
+<tr>
+<td><code>INDEX ON &lt;col&gt; FROM &lt;relation_name&gt; USING BTREE</code></td>
+<td>Creates a two-level secondary index on a column.</td>
+</tr>
+<tr>
+<td><code>INSERT INTO &lt;relation_name&gt; (col1 = val1, ...)</code></td>
+<td>Inserts a new row into a table and updates indices.</td>
+</tr>
+<tr>
+<td><code>UPDATE &lt;relation_name&gt; WHERE &lt;cond&gt; SET &lt;col&gt; = &lt;val&gt;</code></td>
+<td>Updates rows matching a condition and updates indices.</td>
+</tr>
+<tr>
+<td><code>DELETE FROM &lt;relation_name&gt; WHERE &lt;cond&gt;</code></td>
+<td>Lazily deletes rows matching a condition.</td>
+</tr>
+<tr>
+<td><code>SOURCE &lt;filename&gt;</code></td>
+<td>Executes a batch of commands from a <code>.ra</code> file.</td>
+</tr>
+<tr>
+<td><code>QUIT</code></td>
+<td>Exits the server.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relational-algebra-operations">Relational Algebra Operations</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;new&gt; &lt;- SELECT &lt;cond&gt; FROM &lt;relation&gt;</code></td>
+<td>Selects rows based on a condition.</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- SEARCH FROM &lt;relation&gt; WHERE &lt;cond&gt;</code></td>
+<td>An index-optimized version of SELECT.</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- PROJECT &lt;cols&gt; FROM &lt;relation&gt;</code></td>
+<td>Creates a new table with a subset of columns.</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- CROSS &lt;relation1&gt; &lt;relation2&gt;</code></td>
+<td>Computes the Cartesian product of two tables.</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- JOIN &lt;rel1&gt;, &lt;rel2&gt; ON &lt;col1&gt; == &lt;col2&gt;</code></td>
+<td>Joins two tables based on an equi-join condition using a hash join.</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- DISTINCT &lt;relation&gt;</code></td>
+<td><em>Syntax supported, implementation pending.</em></td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- SORT &lt;relation&gt; BY &lt;col&gt; IN &lt;ASC/DESC&gt;</code></td>
+<td>Creates a new sorted table using external merge sort.</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- ORDER BY &lt;col&gt; &lt;ASC/DESC&gt; ON &lt;relation&gt;</code></td>
+<td>Creates a new sorted table (alias for SORT).</td>
+</tr>
+<tr>
+<td><code>&lt;new&gt; &lt;- GROUP BY &lt;g_col&gt; FROM &lt;rel&gt; HAVING &lt;agg_cond&gt; RETURN &lt;agg&gt;</code></td>
+<td>Groups rows and computes aggregate functions.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="matrix-operations">Matrix Operations</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOAD MATRIX &lt;matrix_name&gt;</code></td>
+<td>Loads a matrix from a <code>.csv</code> file.</td>
+</tr>
+<tr>
+<td><code>PRINT MATRIX &lt;matrix_name&gt;</code></td>
+<td>Prints a matrix to the console.</td>
+</tr>
+<tr>
+<td><code>EXPORT MATRIX &lt;matrix_name&gt;</code></td>
+<td>Saves a matrix to a permanent <code>.csv</code> file.</td>
+</tr>
+<tr>
+<td><code>ROTATE &lt;matrix_name&gt;</code></td>
+<td>Rotates a matrix 90 degrees clockwise in-place.</td>
+</tr>
+<tr>
+<td><code>CROSSTRANSPOSE &lt;mat1&gt; &lt;mat2&gt;</code></td>
+<td>Transposes and swaps the blocks of two matrices.</td>
+</tr>
+<tr>
+<td><code>CHECKANTISYM &lt;mat1&gt; &lt;mat2&gt;</code></td>
+<td>Checks if <code>mat1</code> is anti-symmetric with respect to <code>mat2</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="team--contributions">Team &amp; Contributions</h2>
+<p>This project was developed by a team of three:</p>
+<ul>
+<li><strong>Miryala Sathvika (2023121007)</strong></li>
+<li><strong>Bhavani Chalasani (2022101014)</strong></li>
+<li><strong>Vasana Srinivasan (2022101023)</strong></li>
+</ul>
+<p>Key areas of contribution included:</p>
+<ul>
+<li><strong>Data Aggregation and Loading</strong>: Implementation of the <code>GROUP BY</code> operator and the <code>LOAD</code> functionality for both tables and matrices.</li>
+<li><strong>Advanced Indexing and DML</strong>: Design and implementation of the two-level secondary index and its integration with <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> commands.</li>
+<li><strong>Matrix Subsystem</strong>: Extension of the core storage engine to support matrix data structures and their corresponding operations.</li>
+</ul>
+
+</body>
+
+</html>
